@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coder Pro — Минималистичная школа программирования</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__container">
+            <a href="#" class="logo logo--link">
+                <span class="logo__badge">CDS</span>
+                <span class="logo__text">Color Design School</span>
+            </a>
+            <nav class="nav">
+                <a href="#courses" class="nav__link">Курсы</a>
+                <a href="#format" class="nav__link">Формат</a>
+                <a href="#contacts" class="nav__link">Контакты</a>
+            </nav>
+            <a href="#cta" class="btn btn--secondary">Записаться</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-slider">
+                    <div class="hero-slide active">
+                        <div class="hero-content">
+                            <span class="badge">AI / Future Skills</span>
+                            <h1 class="hero-title">Используй AI как<br>инструмент роста</h1>
+                            <p class="hero-text">Нейросети, промпты, генерация контента и создание быстрых AI-прототипов.</p>
+                            <a href="#catalog" class="btn btn--primary">Смотреть AI</a>
+                        </div>
+                        <div class="hero-image">
+                            <div class="ai-visual-mock">
+                                <span class="visual-tag tag-gpt">GPT</span>
+                                <span class="visual-tag tag-ai">AI</span>
+                                <span class="visual-tag tag-year">2026</span>
+                                <div class="glow-effect"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-slide">
+                        <div class="hero-content">
+                            <span class="badge">Web Development</span>
+                            <h1 class="hero-title">Создавай современные<br>Frontend-интерфейсы</h1>
+                            <p class="hero-text">Освой HTML, CSS, JavaScript и React. Научись верстать адаптивные сайты с нуля.</p>
+                            <a href="#catalog" class="btn btn--primary">Смотреть Frontend</a>
+                        </div>
+                        <div class="hero-image">
+                            <div class="ai-visual-mock">
+                                <span class="visual-tag tag-gpt">HTML</span>
+                                <span class="visual-tag tag-ai">JS</span>
+                                <span class="visual-tag tag-year">React</span>
+                                <div class="glow-effect"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-slide">
+                        <div class="hero-content">
+                            <span class="badge">Backend Engineering</span>
+                            <h1 class="hero-title">Разрабатывай мощную<br>архитектуру на Go</h1>
+                            <p class="hero-text">Проектируй высоконагруженные серверные системы, базы данных и защищенные API.</p>
+                            <a href="#catalog" class="btn btn--primary">Смотреть GoLang</a>
+                        </div>
+                        <div class="hero-image">
+                            <div class="ai-visual-mock">
+                                <span class="visual-tag tag-gpt">Go</span>
+                                <span class="visual-tag tag-ai">API</span>
+                                <span class="visual-tag tag-year">SQL</span>
+                                <div class="glow-effect"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-slide">
+                        <div class="hero-content">
+                            <span class="badge">UI/UX Design</span>
+                            <h1 class="hero-title">Проектируй интуитивный<br>Digital-дизайн</h1>
+                            <p class="hero-text">Интерфейсы, мобильные приложения, интерактивные прототипы в Figma и аналитика UX.</p>
+                            <a href="#catalog" class="btn btn--primary">Смотреть Design</a>
+                        </div>
+                        <div class="hero-image">
+                            <div class="ai-visual-mock">
+                                <span class="visual-tag tag-gpt">Figma</span>
+                                <span class="visual-tag tag-ai">UX</span>
+                                <span class="visual-tag tag-year">UI</span>
+                                <div class="glow-effect"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="courses" class="section">
+            <div class="container">
+                <span class="section-subtitle reveal">Курсы</span>
+                <h2 class="section-title reveal">Выбери направление</h2>
+                <p class="section-desc reveal">Фильтр выше работает: выбирай категорию или ищи курс по названию.</p>
+
+                <div class="directions-grid">
+                    <div class="dir-card reveal reveal-delay-1">
+                        <div class="dir-card__head">
+                            <span class="dir-card__num">01</span>
+                            <div class="dir-card__img-mock python-bg"></div>
+                        </div>
+                        <h3 class="dir-card__title">Python</h3>
+                        <p class="dir-card__text">Основы программирования и проекты для портфолио.</p>
+                        <div class="dir-card__tags">
+                            <span class="tag">с нуля</span>
+                            <span class="tag">8 месяцев</span>
+                        </div>
+                    </div>
+
+                    <div class="dir-card reveal reveal-delay-2">
+                        <div class="dir-card__head">
+                            <span class="dir-card__num">02</span>
+                            <div class="dir-card__img-mock frontend-bg"></div>
+                        </div>
+                        <h3 class="dir-card__title">Frontend</h3>
+                        <p class="dir-card__text">HTML, CSS, JavaScript, адаптивные сайты и современные интерфейсы.</p>
+                        <div class="dir-card__tags">
+                            <span class="tag">web</span>
+                            <span class="tag">6 месяцев</span>
+                        </div>
+                    </div>
+
+                    <div class="dir-card reveal reveal-delay-3">
+                        <div class="dir-card__head">
+                            <span class="dir-card__num">03</span>
+                            <div class="dir-card__img-mock ui-bg"></div> </div>
+                        <h3 class="dir-card__title">Graphic Design</h3>
+                        <p class="dir-card__text">Основы композиции, айдентика, работа с растром и вектором в Adobe Photoshop и Illustrator.</p>
+                        <div class="dir-card__tags">
+                            <span class="tag">design</span>
+                            <span class="tag">4 месяца</span>
+                        </div>
+                    </div>
+
+                    <div class="dir-card reveal reveal-delay-4">
+                        <div class="dir-card__head">
+                            <span class="dir-card__num">04</span>
+                            <div class="dir-card__img-mock go-bg"></div> </div>
+                        <h3 class="dir-card__title">Web Design</h3>
+                        <p class="dir-card__text">Проектирование интерфейсов, адаптивный дизайн сайтов и интерактивные прототипы в Figma.</p>
+                        <div class="dir-card__tags">
+                            <span class="tag">figma</span>
+                            <span class="tag">5 месяцев</span>
+                        </div>
+                    </div>
+
+                    <div class="dir-card reveal reveal-delay-5">
+                        <div class="dir-card__head">
+                            <span class="dir-card__num">05</span>
+                            <div class="dir-card__img-mock ai-bg"></div> </div>
+                        <h3 class="dir-card__title">3D Моделирование</h3>
+                        <p class="dir-card__text">Создание трехмерных объектов, работа с полигонами, текстурирование и рендеринг сцен в Blender.</p>
+                        <div class="dir-card__tags">
+                            <span class="tag">blender</span>
+                            <span class="tag">6 месяцев</span>
+                        </div>
+                    </div>
+
+                    <div class="dir-card reveal reveal-delay-1">
+                        <div class="dir-card__head">
+                            <span class="dir-card__num">06</span>
+                            <div class="dir-card__img-mock python-bg"></div>
+                        </div>
+                        <h3 class="dir-card__title">Монтаж Видео</h3>
+                        <p class="dir-card__text">Профессиональная склейка, цветокоррекция и спецэффекты в Premiere Pro и After Effects.</p>
+                        <div class="dir-card__tags">
+                            <span class="tag">video</span>
+                            <span class="tag">4 месяца</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="format" class="section process-section">
+            <div class="container process-container">
+                <div class="process-left reveal">
+                    <div class="process-img-box">
+                        <div class="process-badge">Формат без перегруза</div>
+                        <p class="process-badge-text">Небольшие группы, понятные домашние задания и регулярная обратная связь.</p>
+                    </div>
+                </div>
+                <div class="process-right">
+                    <span class="section-subtitle reveal">Как проходит обучение</span>
+                    <h2 class="section-title reveal">От первого урока<br>до проекта</h2>
+                    
+                    <div class="steps-list">
+                        <div class="step-item reveal reveal-delay-1">
+                            <div class="step-num">01</div>
+                            <div class="step-content">
+                                <h4>База</h4>
+                                <p>Разбираешь основы без сложных терминов и лишней воды.</p>
+                            </div>
+                        </div>
+                        <div class="step-item reveal reveal-delay-2">
+                            <div class="step-num">02</div>
+                            <div class="step-content">
+                                <h4>Практика</h4>
+                                <p>После каждой темы делаешь задачу или мини-проект.</p>
+                            </div>
+                        </div>
+                        <div class="step-item reveal reveal-delay-3">
+                            <div class="step-num">03</div>
+                            <div class="step-content">
+                                <h4>Портфолио</h4>
+                                <p>В конце курса собираешь работу, которую можно показать.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalog" class="section">
+            <div class="container">
+                <span class="section-subtitle reveal">Каталог</span>
+                <h2 class="section-title reveal">Выбери курс и формат обучения</h2>
+                <p class="section-desc reveal">Здесь можно отфильтровать курсы по направлению и посмотреть стоимость обучения.</p>
+
+                <div class="filter-bar reveal">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Все</button>
+                        <button class="filter-btn" data-filter="python">Python</button>
+                        <button class="filter-btn" data-filter="frontend">Frontend</button>
+                        <button class="filter-btn" data-filter="design">Graphic Design</button>
+                        <button class="filter-btn" data-filter="webdesign">Web Design</button>
+                        <button class="filter-btn" data-filter="3d">3D Моделирование</button>
+                        <button class="filter-btn" data-filter="video">Монтаж Видео</button>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" id="courseSearch" placeholder="Поиск курса">
+                    </div>
+                </div>
+
+                <div class="catalog-grid">
+                    <div class="catalog-card reveal reveal-delay-1" data-category="python">
+                        <div class="catalog-card__top">
+                            <div>
+                                <span class="card-label">Профессия</span>
+                                <h3 class="catalog-card__title">Python-разработчик</h3>
+                            </div>
+                            <div class="catalog-card__thumb python-bg"></div>
+                        </div>
+                        <ul class="catalog-card__features">
+                            <li>8 месяцев обучения</li>
+                            <li>проекты для портфолио</li>
+                            <li>помощь наставника</li>
+                        </ul>
+                        <div class="catalog-card__footer">
+                            <div class="price-box">
+                                <span class="price-label">от</span>
+                                <span class="price-value">32 000 ₸/мес.</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn--text">Подробнее</button>
+                                <a href="#cta" class="btn btn--secondary">Записаться</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog-card reveal reveal-delay-2" data-category="frontend">
+                        <div class="catalog-card__top">
+                            <div>
+                                <span class="card-label">Web</span>
+                                <h3 class="catalog-card__title">Frontend</h3>
+                            </div>
+                            <div class="catalog-card__thumb frontend-bg"></div>
+                        </div>
+                        <ul class="catalog-card__features">
+                            <li>6 месяцев обучения</li>
+                            <li>HTML, CSS, JavaScript</li>
+                            <li>адаптивные сайты</li>
+                        </ul>
+                        <div class="catalog-card__footer">
+                            <div class="price-box">
+                                <span class="price-label">от</span>
+                                <span class="price-value">32 000 ₸/мес.</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn--text">Подробнее</button>
+                                <a href="#cta" class="btn btn--secondary">Записаться</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog-card reveal reveal-delay-3" data-category="design">
+                        <div class="catalog-card__top">
+                            <div>
+                                <span class="card-label">Design</span>
+                                <h3 class="catalog-card__title">Graphic Design</h3>
+                            </div>
+                            <div class="catalog-card__thumb ui-bg"></div>
+                        </div>
+                        <ul class="catalog-card__features">
+                            <li>4 месяца обучения</li>
+                            <li>Photoshop и Illustrator</li>
+                            <li>Разработка айдентики и лого</li>
+                        </ul>
+                        <div class="catalog-card__footer">
+                            <div class="price-box">
+                                <span class="price-label">от</span>
+                                <span class="price-value">32 000 ₸/мес.</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn--text">Подробнее</button>
+                                <a href="#cta" class="btn btn--secondary">Записаться</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog-card reveal reveal-delay-4" data-category="webdesign">
+                        <div class="catalog-card__top">
+                            <div>
+                                <span class="card-label">Figma</span>
+                                <h3 class="catalog-card__title">Web Design</h3>
+                            </div>
+                            <div class="catalog-card__thumb go-bg"></div>
+                        </div>
+                        <ul class="catalog-card__features">
+                            <li>5 месяцев обучения</li>
+                            <li>Прототипы сайтов в Figma</li>
+                            <li>UX-аналитика и UI-киты</li>
+                        </ul>
+                        <div class="catalog-card__footer">
+                            <div class="price-box">
+                                <span class="price-label">от</span>
+                                <span class="price-value">32 000 ₸/мес.</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn--text">Подробнее</button>
+                                <a href="#cta" class="btn btn--secondary">Записаться</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog-card reveal reveal-delay-5" data-category="3d">
+                        <div class="catalog-card__top">
+                            <div>
+                                <span class="card-label">Blender</span>
+                                <h3 class="catalog-card__title">3D Моделирование</h3>
+                            </div>
+                            <div class="catalog-card__thumb ai-bg"></div>
+                        </div>
+                        <ul class="catalog-card__features">
+                            <li>6 месяцев обучения</li>
+                            <li>Рендеринг и текстуры</li>
+                            <li>Создание сцен с нуля</li>
+                        </ul>
+                        <div class="catalog-card__footer">
+                            <div class="price-box">
+                                <span class="price-label">от</span>
+                                <span class="price-value">32 000 ₸/мес.</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn--text">Подробнее</button>
+                                <a href="#cta" class="btn btn--secondary">Записаться</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog-card reveal reveal-delay-1" data-category="video">
+                        <div class="catalog-card__top">
+                            <div>
+                                <span class="card-label">Production</span>
+                                <h3 class="catalog-card__title">Монтаж Видео</h3>
+                            </div>
+                            <div class="catalog-card__thumb python-bg"></div>
+                        </div>
+                        <ul class="catalog-card__features">
+                            <li>4 месяца обучения</li>
+                            <li>Premiere Pro & After Effects</li>
+                            <li>Эффекты и цветокоррекция</li>
+                        </ul>
+                        <div class="catalog-card__footer">
+                            <div class="price-box">
+                                <span class="price-label">от</span>
+                                <span class="price-value">32 000 ₸/мес.</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn--text">Подробнее</button>
+                                <a href="#cta" class="btn btn--secondary">Записаться</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="section cta-section">
+            <div class="container cta-container reveal">
+                <div class="cta-info">
+                    <span class="card-label">Старт</span>
+                    <h2 class="cta-title">Начни путь в IT уже сегодня</h2>
+                    <p class="cta-desc">Оставь заявку — поможем выбрать направление и подскажем, с чего начать.</p>
+                </div>
+                <form class="cta-form" id="leadForm">
+                    <input type="text" placeholder="Имя" required class="form-input">
+                    <input type="tel" placeholder="Телефон" required class="form-input">
+                    <button type="submit" class="btn btn--submit">Записаться</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacts" class="footer">
+        <div class="container footer__grid reveal">
+            <div class="footer__brand">
+                <div class="logo">
+                    <span class="logo__badge">CP</span>
+                    <span class="logo__text">Coder Pro</span>
+                </div>
+                <p class="footer__copy-text">Минималистичная школа программирования и дизайна для тех, кто хочет уверенно стартовать в IT: Python, Frontend, Web Design, Graphic Design.</p>
+            </div>
+            
+            <div class="footer__links-block">
+                <h4>Курсы</h4>
+                <a href="#catalog">Python</a>
+                <a href="#catalog">Frontend</a>
+                <a href="#catalog">Graphic Design</a>
+                <a href="#catalog">Web Design</a>
+            </div>
+
+            <div class="footer__links-block">
+                <h4>Школа</h4>
+                <a href="#format">Формат обучения</a>
+                <!-- <a href="#reviews">Отзывы</a> -->
+                <a href="#cta">Записаться</a>
+                <a href="#courses">Направления</a>
+            </div>
+
+            <div class="footer__links-block">
+                <h4>Контакты</h4>
+                <a href="tel:+77086082788" class="contact-link">+7 708 608 2788</a>
+                <!-- <a href="mailto:hello@codemasters.pro" class="contact-link">hello@codemasters.pro</a> -->
+                <a href="mailto:hello@codemasters.pro" class="contact-link">niazahmetov@gmail.com</a>
+                <span class="contact-span">Павлодар, Казахстан</span>
+            </div>
+        </div>
+        
+        <div class="container footer__bottom">
+            <span>© 2026 COLOR DESIGN SCHOOL</span>
+            <div class="footer__socials">
+                <a href="https://www.instagram.com/color.design.school?igsh=MXc4eDhkNnh2MzJwaQ==">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
