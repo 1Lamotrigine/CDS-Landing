@@ -1,4 +1,6 @@
-/* ОБНУЛЕНИЕ СТИЛЕЙ И ГЛОБАЛЬНЫЕ НАСТРОЙКИ */
+/* ==========================================================================
+   1. ОБНУЛЕНИЕ СТИЛЕЙ И ГЛОБАЛЬНЫЕ НАСТРОЙКИ
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -35,48 +37,6 @@ body {
     padding: 0 20px;
 }
 
-/* ==========================================================================
-ГЛОБАЛЬНАЯ СИСТЕМА ПЛАВНОГО ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ
-   ========================================================================== */
-
-/* Исходное состояние элемента до того, как пользователь до него доскроллил */
-.reveal {
-    opacity: 0;
-    transform: translateY(35px) scale(0.98); /* Смещение вниз и легкое уменьшение */
-    transition: opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), 
-                transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
-    will-change: transform, opacity; /* Оптимизация производительности рендеринга */
-}
-
-/* Состояние элемента, когда он входит в зону видимости экрана */
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0) scale(1); /* Возвращаем в дефолтное положение */
-}
-
-/* Шаг задержки в 100мс для создания эффекта "волны" при появлении карточек */
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-.reveal-delay-5 { transition-delay: 0.5s; }
-
-/* Дополнительно: если вы хотите, чтобы шапка сайта (header) мягко проявилась при загрузке */
-.header {
-    animation: fadeInHeader 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-}
-
-@keyframes fadeInHeader {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .section {
     padding: 80px 0;
 }
@@ -104,7 +64,9 @@ body {
     max-width: 600px;
 }
 
-/* КНОПКИ */
+/* ==========================================================================
+   2. КНОПКИ
+   ========================================================================== */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -147,7 +109,14 @@ body {
     color: var(--text-main);
 }
 
-/* ШАПКА */
+/* ==========================================================================
+   3. ШАПКА (HEADER)
+   ========================================================================== */
+
+.cds__logo{
+    width: 100px;
+}
+
 .header {
     border-bottom: 1px solid var(--border-color);
     position: sticky;
@@ -155,6 +124,7 @@ body {
     background-color: rgba(11, 12, 16, 0.8);
     backdrop-filter: blur(12px);
     z-index: 100;
+    animation: fadeInHeader 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 .header__container {
@@ -172,7 +142,7 @@ body {
 
 .logo--link {
     text-decoration: none;
-    color: inherit; /* Наследует белый цвет текста, который у вас настроен */
+    color: inherit;
 }
 
 .logo__badge {
@@ -206,7 +176,9 @@ body {
     color: var(--text-main);
 }
 
-/* МОДЕРНИЗИРОВАННЫЙ СЛАЙДЕР В СЕКЦИИ HERO */
+/* ==========================================================================
+   4. СЕКЦИЯ HERO (ОБНОВЛЕННАЯ СТАТИЧЕСКАЯ)
+   ========================================================================== */
 .hero-section {
     padding: 40px 0;
 }
@@ -216,44 +188,36 @@ body {
     border-radius: 24px;
     border: 1px solid var(--border-color);
     position: relative;
-    height: 460px; /* Фиксированная высота для стабильности контейнера */
+    min-height: 480px;
+    display: flex;
     overflow: hidden;
 }
 
 .hero-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 60px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
-    z-index: 1;
-}
-
-.hero-slide.active {
     opacity: 1;
     visibility: visible;
-    z-index: 2;
 }
 
-/* Анимация контента внутри активного слайда */
-.hero-slide.active .hero-content {
-    animation: slideUpIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.hero-slide .hero-content {
+    animation: slideUpIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.hero-slide.active .hero-image {
-    animation: fadeInScale 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.hero-slide .hero-image {
+    animation: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .hero-content {
     flex: 1;
     max-width: 550px;
-    opacity: 0; /* Начальное состояние для анимации */
+    opacity: 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .badge {
@@ -264,6 +228,7 @@ body {
     color: var(--text-muted);
     display: inline-block;
     margin-bottom: 20px;
+    align-self: flex-start;
 }
 
 .hero-title {
@@ -277,7 +242,7 @@ body {
 .hero-text {
     color: var(--text-muted);
     font-size: 1.1rem;
-    margin-bottom: 30px;
+    margin-bottom: 34px;
     line-height: 1.5;
 }
 
@@ -285,8 +250,9 @@ body {
     flex: 1;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     position: relative;
-    opacity: 0; /* Начальное состояние для анимации */
+    opacity: 0;
 }
 
 .ai-visual-mock {
@@ -298,17 +264,6 @@ body {
     border: 1px solid rgba(255,255,255,0.1);
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     overflow: hidden;
-}
-
-/* Разные фоны для других слайдов, чтобы они отличались визуально */
-.hero-slide:nth-child(2) .ai-visual-mock {
-    background: radial-gradient(circle at center, #3b1b44 0%, #11111d 80%);
-}
-.hero-slide:nth-child(3) .ai-visual-mock {
-    background: radial-gradient(circle at center, #1b4431 0%, #111d17 80%);
-}
-.hero-slide:nth-child(4) .ai-visual-mock {
-    background: radial-gradient(circle at center, #44321b 0%, #1d1711 80%);
 }
 
 .visual-tag {
@@ -337,50 +292,22 @@ body {
     opacity: 0.4;
 }
 
-.slider-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 20px;
-}
-
-.dot {
-    width: 24px;
-    height: 3px;
-    background-color: #22252e;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.dot.active {
-    background-color: var(--text-main);
-    width: 40px; /* Увеличенная активная полоска индикатора */
-}
-
-/* НАПРАВЛЕНИЯ КУРСОВ (GRID СЕТКА) */
-/* .directions-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-} */
-
-/* Базовые стили сетки (для мобильных устройств — 1 колонка) */
+/* ==========================================================================
+   5. НАПРАВЛЕНИЯ КУРСОВ (GRID СЕТКА)
+   ========================================================================== */
 .directions-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 24px; /* Отступ между карточками */
+    gap: 24px;
     width: 100%;
 }
 
-/* Планшетная версия (от 600px — 2 колонки) */
 @media (min-width: 600px) {
     .directions-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Десктопная версия (от 992px — строго 3 столбика) */
 @media (min-width: 992px) {
     .directions-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -454,7 +381,9 @@ body {
     border: 1px solid rgba(255,255,255,0.03);
 }
 
-/* СЕКЦИЯ КАК ПРОХОДИТ ОБУЧЕНИЕ */
+/* ==========================================================================
+   6. СЕКЦИЯ КАК ПРОХОДИТ ОБУЧЕНИЕ
+   ========================================================================== */
 .process-container {
     display: flex;
     gap: 60px;
@@ -521,119 +450,9 @@ body {
     font-size: 0.85rem;
 }
 
-/* СЕКЦИЯ СТАТИСТИКИ */
-.stats-section {
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    padding: 40px 0;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-.stat-box {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.stat-num {
-    font-size: 3rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-}
-
-.stat-text {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
-/* БЕГУЩАЯ СТРОКА С ОТЗЫВАМИ */
-.marquee-section {
-    padding-bottom: 40px;
-}
-
-.marquee-wrapper {
-    overflow: hidden;
-    width: 100%;
-    display: flex;
-    position: relative;
-    padding: 20px 0;
-}
-
-.marquee-wrapper::before, .marquee-wrapper::after {
-    content: "";
-    position: absolute;
-    top: 0; width: 100px; height: 100%;
-    z-index: 2;
-}
-.marquee-wrapper::before { left: 0; background: linear-gradient(to right, var(--bg-color), transparent); }
-.marquee-wrapper::after { right: 0; background: linear-gradient(to left, var(--bg-color), transparent); }
-
-.marquee-track {
-    display: flex;
-    gap: 20px;
-    animation: marquee 25s linear infinite;
-}
-
-.marquee-track:hover {
-    animation-play-state: paused;
-}
-
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-.review-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 20px;
-    width: 320px;
-    flex-shrink: 0;
-}
-
-.review-user {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-}
-
-.avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #3a3f50;
-}
-
-.user-1 { background: radial-gradient(#ff7b72, #3a3f50); }
-.user-2 { background: radial-gradient(#79c0ff, #3a3f50); }
-.user-3 { background: radial-gradient(#56d364, #3a3f50); }
-
-.user-name {
-    font-size: 0.95rem;
-    font-weight: 600;
-}
-
-.user-course {
-    color: var(--text-muted);
-    font-size: 0.75rem;
-    display: block;
-}
-
-.review-text {
-    color: #d1d4dc;
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
-/* КАТАЛОГ С ФИЛЬТРАМИ */
+/* ==========================================================================
+   7. КАТАЛОГ С ФИЛЬТРАМИ
+   ========================================================================== */
 .filter-bar {
     display: flex;
     justify-content: space-between;
@@ -768,7 +587,9 @@ body {
     align-items: center;
 }
 
-/* СЕКЦИЯ С ФОРМОЙ */
+/* ==========================================================================
+   8. СЕКЦИЯ С ФОРМОЙ (CTA)
+   ========================================================================== */
 .cta-section {
     padding: 60px 0;
 }
@@ -832,7 +653,9 @@ body {
     margin-top: 10px;
 }
 
-/* ПОДВАЛ */
+/* ==========================================================================
+   9. ПОДВАЛ (FOOTER)
+   ========================================================================== */
 .footer {
     border-top: 1px solid var(--border-color);
     padding: 60px 0 30px 0;
@@ -906,10 +729,8 @@ body {
 }
 
 /* ==========================================================================
-   НОВЫЕ СТИЛИ ДЛЯ ПЛАВНЫХ АНИМАЦИЙ ПРОГРУЗКИ (SCROLL REVEAL)
+   10. СИСТЕМА ПЛАВНОГО ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ И ЗАГРУЗКЕ
    ========================================================================== */
-
-/* Базовый класс для элементов, которые будут плавно проявляться снизу */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -918,20 +739,28 @@ body {
     will-change: transform, opacity;
 }
 
-/* Класс запуска анимации (добавляется через JS при скролле) */
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Задержки (Stagger) для карточек внутри сеток, чтобы они появлялись по очереди */
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 .reveal-delay-5 { transition-delay: 0.5s; }
 
-/* Локальные ключевые анимации внутренних элементов слайдера */
+@keyframes fadeInHeader {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes slideUpIn {
     from {
         opacity: 0;
@@ -954,7 +783,9 @@ body {
     }
 }
 
-/* МЕДИА-ЗАПРОСЫ (АДАПТИВНОСТЬ) */
+/* ==========================================================================
+   11. МЕДИА-ЗАПРОСЫ (АДАПТИВНОСТЬ К ЭКРАНАМ)
+   ========================================================================== */
 @media (max-width: 992px) {
     .hero-slider {
         height: auto;
@@ -963,18 +794,19 @@ body {
         position: relative;
         opacity: 1;
         visibility: visible;
-        display: none;
+        display: flex;
         flex-direction: column;
-        padding: 40px;
+        padding: 40px 24px;
         text-align: center;
         height: auto;
-    }
-    .hero-slide.active {
-        display: flex;
     }
     .hero-content {
         max-width: 100%;
         margin-bottom: 40px;
+        align-items: center;
+    }
+    .badge {
+        align-self: center;
     }
     .hero-image {
         justify-content: center;
@@ -986,9 +818,6 @@ body {
     .process-container {
         flex-direction: column;
         gap: 40px;
-    }
-    .stats-grid {
-        gap: 20px;
     }
     .catalog-grid {
         grid-template-columns: 1fr;
@@ -1012,10 +841,6 @@ body {
     }
     .section-title {
         font-size: 2rem;
-    }
-    .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
     }
     .filter-bar {
         flex-direction: column;
